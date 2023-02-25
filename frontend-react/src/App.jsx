@@ -31,14 +31,14 @@ function App() {
         })
       }
 
-  useEffect(()=>{
-       console.log("This component has mounted ")
-       fetch("https://jsonplaceholder.typicode.com/posts")
-       .then(res =>res.json())
-       .then(data=>{
-         setData(data);
-       })
-  },[])
+  // useEffect(()=>{
+  //      console.log("This component has mounted ")
+  //      fetch("https://jsonplaceholder.typicode.com/posts")
+  //      .then(res =>res.json())
+  //      .then(data=>{
+  //        setData(data);
+  //      })
+  // },[])
 
    
   return (
@@ -48,13 +48,7 @@ function App() {
              <div>The name is {person.name} and age is {person.age} </div>
              <div>The list contains {JSON.stringify(numberList)} </div>
              <ComponentOne /> 
-{/* 
-          {JSON.stringify(data)}  
-          {/* <ul>
-            {data.map((value)=>{
-              return <li>{value.title}</li>
-            })}
-          </ul> */}
+
     </div>
 
   )

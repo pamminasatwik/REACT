@@ -8,7 +8,7 @@ config();
 // import * as userlib from "./backend/lib/userlib.js"
 // const todolib = require("./backend/lib/todolib");
 import * as todoLib from "./backend/lib/todolib.js";
-import express,{request} from "express";
+import express,{request,response} from "express";
 // const express = require('express');
 // const mongoose = require("mongoose");
 import mongoose from "mongoose";
@@ -29,10 +29,6 @@ app.use(express.json())
     //     { name: "todo1", iscompleted: true }, { name: "todo1", iscompleted: true }, { name: "todo1", iscompleted: true }
     // ]);
 
-app.get("/*", function(req, res){
-	// res.send("I am satwik");
-    res.sendFile(process.cwd() + "/frontend/index.html");
-});
 
 
 app.get("/api/todos", function(req, res) {
@@ -134,7 +130,10 @@ app.delete('/api/todos/:todoid',function(req,res){
 // });
 
 
-
+app.get("/*", function(request, response){
+	// res.send("I am satwik");
+    response.sendFile(process.cwd() + "/frontend/index.html");
+});
 
 mongoose.set('strictQuery', true);
 mongoose.connect(process.env.MONGO_CONNECTION_STRING, {}, function(err) {

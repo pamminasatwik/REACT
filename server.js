@@ -7,7 +7,7 @@ config();
 // const userlib = require("./backend/lib/userlib");
 // import * as userlib from "./backend/lib/userlib.js"
 // const todolib = require("./backend/lib/todolib");
-import * as todoLib from "./backend/lib/todolib.js";
+import * as todoLib from "./backend/lib/todoLib.js";
 import express,{request,response} from "express";
 // const express = require('express');
 // const mongoose = require("mongoose");

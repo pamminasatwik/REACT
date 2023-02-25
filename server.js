@@ -1,7 +1,7 @@
 // require('dotenv').config();
 // import dotenv from "dotenv";
 // dotenv.config();
-
+import cors from "cors" ;
 import {config} from "dotenv";
 config();
 // const userlib = require("./backend/lib/userlib");
@@ -19,7 +19,7 @@ const options = {
     extensions: ['htm', 'html','css','js','ico','jpg','jpeg','png','svg'],
     index: ['index.html'],  
 }
-
+app.use(cors())
 app.use(express.static("frontend"));
 app.use(express.json())
 
